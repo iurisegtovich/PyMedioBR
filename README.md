@@ -46,4 +46,4 @@ https://www.continuum.io/downloads
 
 https://github.com/afonso-prog/matem-tica
 
-https://github.com/lamenezes/pygames-minicurso/tree/master/flappyladies/fonts
+https://github.com/lamenezes/pygames-minicurso/
