@@ -1,8 +1,23 @@
-## Índice
+# Índice
 
-[índice aqui](http://nbviewer.jupyter.org/github/iurisegtovich/PyMedioBR/blob/master/index.ipynb)
+Opção 1 - leitura stática:
 
-### Aulas
+Acesse o índice de aulas [aqui](http://nbviewer.jupyter.org/github/iurisegtovich/PyMedioBR/blob/master/index.ipynb)
+
+Opção 2 - leitura interativa:
+
+Verifique o status do servidor de computação remota [aqui](http://mybinder.org/status)
+
+Acesse o sistema interativo [aqui](http://mybinder.org:/repo/{{ site.github.owner_name }}/{{ site.github.repository_name }})
+
+Opção 3 - instalação local
+
+download do programa anaconda [aqui](https://www.continuum.io/downloads#windows)
+
+download das aulas [aqui](http://github.com/{{ site.github.owner_name }}/{{ site.github.repository_name }}/zipball/master)
+
+
+# Detalhes sobre as aulas:
 
 * Aula 1 - Python - sintaxe básica
 
@@ -22,7 +37,7 @@
 > **Requisitos:**
 >
 >- instalação do python + bibliotecas + jupyter-notebook:
->- obtenha tudo de uma vez instalando o   [*Anaconda*](https://www.continuum.io/downloads)
+>- obtenha tudo de uma vez instalando o [*Anaconda*](https://www.continuum.io/downloads)
 >- navegador para trabalhar junto com o jupyter-notebook
 >- baixe os arquivos com extensão `ipynb` clicando no botão CLONE OR DOWNLOAD  > DOWNLOAD ZIP
 >
@@ -31,7 +46,7 @@
 >- matemática: algebra linear, matrizes
 >- matemática: funções polinomiais, potencias, exp, log, trigonométricas, representações gráficas
 
-## Referências oficiais (documentações em inglês)
+# Referências oficiais (documentações em inglês)
 
 https://www.python.org/
 
