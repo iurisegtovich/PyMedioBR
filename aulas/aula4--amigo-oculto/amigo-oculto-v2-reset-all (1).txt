@@ -1,0 +1,235 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['ViniciusSilva', 'IuriSegtovich', 'RafaelPereira', 'FernandoMedeiros', 'LeoTG', 'IngridOliveira', 'RafaelSouza', 'IsabelaQuintela', 'GabrielBarbosa', 'MariaRosa', 'AnaSilveira', 'CarlaManske', 'JéssicaMaciel', 'NathaliaRibeiro', 'GuilhermeCarneiro', 'ThiagoPinheiro', 'VictorSermoud', 'ArthurBraga', 'MarlonGama', 'Paulinha', 'Wilfred']\n"
+     ]
+    }
+   ],
+   "source": [
+    "amigos=[\n",
+    "    \"ViniciusSilva\",\n",
+    "    \"IuriSegtovich\",\n",
+    "    \"RafaelPereira\",\n",
+    "    \"FernandoMedeiros\",\n",
+    "    \"LeoTG\",\n",
+    "    \"IngridOliveira\",\n",
+    "    \"RafaelSouza\",\n",
+    "    \"IsabelaQuintela\",\n",
+    "    \"GabrielBarbosa\",\n",
+    "    \"MariaRosa\",\n",
+    "    \"AnaSilveira\",\n",
+    "    \"CarlaManske\",\n",
+    "    \"JéssicaMaciel\",\n",
+    "    \"NathaliaRibeiro\",\n",
+    "    \"GuilhermeCarneiro\",\n",
+    "    \"ThiagoPinheiro\",\n",
+    "    \"VictorSermoud\",\n",
+    "    \"ArthurBraga\",\n",
+    "    \"MarlonGama\",\n",
+    "    \"Paulinha\",\n",
+    "    \"Wilfred\"\n",
+    "]\n",
+    "print(amigos)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "21\n"
+     ]
+    }
+   ],
+   "source": [
+    "count=len(amigos)\n",
+    "print(count)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {
+    "collapsed": false,
+    "scrolled": true
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'VictorSermoud', 'FernandoMedeiros', 'ArthurBraga', 'JéssicaMaciel', 'ViniciusSilva', 'ThiagoPinheiro', 'MarlonGama', 'Wilfred', 'MariaRosa', 'IsabelaQuintela', 'RafaelSouza', 'GabrielBarbosa', 'GuilhermeCarneiro', 'IuriSegtovich', 'IngridOliveira', 'RafaelPereira', 'AnaSilveira', 'CarlaManske', 'NathaliaRibeiro', 'LeoTG', 'Paulinha'}\n"
+     ]
+    }
+   ],
+   "source": [
+    "pool=set(amigos)\n",
+    "print(pool)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['none', 'none', 'none', 'none', 'none', 'none', 'none', 'none', 'none', 'none', 'none', 'none', 'none', 'none', 'none', 'none', 'none', 'none', 'none', 'none', 'none']\n"
+     ]
+    }
+   ],
+   "source": [
+    "ocultos=[\"none\"]*count\n",
+    "print(ocultos)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "vai galera\n",
+      "beleza, foi!\n"
+     ]
+    }
+   ],
+   "source": [
+    "import random\n",
+    "startover=True\n",
+    "while startover:\n",
+    "    if startover:\n",
+    "    #init:\n",
+    "        random.shuffle(amigos)\n",
+    "        pool=set(amigos)\n",
+    "        ocultos=[\"none\"]*count\n",
+    "        startover=False\n",
+    "\n",
+    "        print(\"vai galera\")\n",
+    "        \n",
+    "    for i, amigoi in enumerate(amigos):\n",
+    "        success2=False\n",
+    "        while not success2 and not startover:\n",
+    "\n",
+    "            picked=random.sample(pool,1)[0]\n",
+    "            if picked != amigos[i]:\n",
+    "                ocultos[i]=picked\n",
+    "                #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n",
+    "                #this line will print the answer out loud!\n",
+    "                #print(amigoi+\" tirou \"+ocultos[i])\n",
+    "                #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n",
+    "                pool.remove(picked)\n",
+    "                success2=True\n",
+    "            elif (picked == amigos[i]):\n",
+    "                print(\"eita\",amigoi+\" se tirou, vamo de novo\")\n",
+    "                startover=True\n",
+    "    \n",
+    "    if not startover:\n",
+    "        print(\"beleza, foi!\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "  adding: Resultados/ArthurBraga.txt (stored 0%)\n",
+      "  adding: Resultados/JéssicaMaciel.txt (stored 0%)\n",
+      "  adding: Resultados/IsabelaQuintela.txt (stored 0%)\n",
+      "  adding: Resultados/GabrielBarbosa.txt (stored 0%)\n",
+      "  adding: Resultados/ViniciusSilva.txt (stored 0%)\n",
+      "  adding: Resultados/MariaRosa.txt (stored 0%)\n",
+      "  adding: Resultados/RafaelPereira.txt (stored 0%)\n",
+      "  adding: Resultados/IngridOliveira.txt (stored 0%)\n",
+      "  adding: Resultados/FernandoMedeiros.txt (stored 0%)\n",
+      "  adding: Resultados/AnaSilveira.txt (stored 0%)\n",
+      "  adding: Resultados/RafaelSouza.txt (stored 0%)\n",
+      "  adding: Resultados/Wilfred.txt (stored 0%)\n",
+      "  adding: Resultados/MarlonGama.txt (stored 0%)\n",
+      "  adding: Resultados/ThiagoPinheiro.txt (stored 0%)\n",
+      "  adding: Resultados/Paulinha.txt (stored 0%)\n",
+      "  adding: Resultados/CarlaManske.txt (stored 0%)\n",
+      "  adding: Resultados/GuilhermeCarneiro.txt (stored 0%)\n",
+      "  adding: Resultados/NathaliaRibeiro.txt (stored 0%)\n",
+      "  adding: Resultados/VictorSermoud.txt (stored 0%)\n",
+      "  adding: Resultados/IuriSegtovich.txt (stored 0%)\n",
+      "  adding: Resultados/LeoTG.txt (stored 0%)\n"
+     ]
+    }
+   ],
+   "source": [
+    "!rm \"Resultados/\"*\n",
+    "for i in range(count):\n",
+    "    !echo \"você tirou {ocultos[i]}\" > \"Resultados/{amigos[i]}.txt\"\n",
+    "    !zip \"Resultados/{amigos[i]}.zip\" \"Resultados/{amigos[i]}.txt\"\n",
+    "    !rm \"Resultados/{amigos[i]}.txt\"\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": [
+    "#cuidado, gabarito!\n",
+    "\n",
+    "# for i in range(count):\n",
+    "#     print(amigos[i]+\" tirou \"+ocultos[i])"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
